@@ -53,8 +53,10 @@ public class NumberFibo {
         while (scanner.hasNextLine()) {
             String string = scanner.nextLine();
             try {
+                int number = Integer.parseInt(string);
                 scanner.close();
-                return Integer.parseInt(string);
+                return number;
+
             } catch (NumberFormatException e) {
                 System.out.println("Sorry. Try again!");
             }
