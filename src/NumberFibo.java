@@ -41,7 +41,6 @@ public class NumberFibo {
         }
         if (n > 2 || n % 2 != 0) {
             return x1;
-        } else {
         }
         return x1 * -1;
     }
@@ -50,16 +49,16 @@ public class NumberFibo {
         System.out.println("This program prints the fibonacci number");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number:");
-        boolean checkInput = true;
-        while (checkInput) {
+
+        while (scanner.hasNextLine()) {
             String string = scanner.nextLine();
             try {
+                scanner.close();
                 return Integer.parseInt(string);
             } catch (NumberFormatException e) {
                 System.out.println("Sorry. Try again!");
             }
         }
-        scanner.close();
-        return 0;
+        return -1;
     }
 }
