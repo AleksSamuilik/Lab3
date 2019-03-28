@@ -16,11 +16,8 @@ public class NumberFibo {
         if (n == 2) return 1;
         if (n == -2) return -1;
         int j = Math.abs(n);
-        if (n > 2 || n % 2 != 0) {
-            return fibRecursive(j - 1) + fibRecursive(j - 2);
-        } else {
-            return -1 * (fibRecursive(j - 1) + fibRecursive(j - 2));
-        }
+        int result = fibRecursive(j - 1) + fibRecursive(j - 2);
+        return n > 2 || n % 2 != 0 ? result : result*-1;
     }
 
     private static int fibNorm(int n) {
